@@ -1,0 +1,24 @@
+<table class="w-full text-left rtl:text-right text-gray-500 dark:text-gray-400">
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <!-- Make the tr's in one line so it will be like this Order Id Created At Status Customer Id -->
+        <tr>
+            <th scope="col" class="px-6 py-3">Order Id</th>
+            <th scope="col" class="px-6 py-3">Created At</th>
+            <th scope="col" class="px-6 py-3">Status</th>
+            <th scope="col" class="px-6 py-3">Customer Id</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of orders" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+            <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">{{ item.getOrderId() }}</td>
+            <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">{{ item.getOrderCreatedAt() | date:'yy/mm/dd' }}</td>
+            <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">{{ item.getOrderStatus() }}</td>
+            <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">{{ item.getOrderCustomerId() }}</td>
+            <td class="px-6 py-4">
+                <button type="button">
+                    <img src="assets/trash.png" alt="Remove" class="w-4 h-4 text-red-600 dark:text-red-500 hover:underline">
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
